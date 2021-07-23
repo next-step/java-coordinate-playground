@@ -1,6 +1,20 @@
 package coordPrac;
 
-public class CaffeineBev {
+//have abstract methods then class too Abstract
+public abstract class CaffeineBev {
+    //not private but public since Both Coffee&Tea the same
+    void prepareRecipe() {
+        boilWater();
+        brew();
+        pourInCup();
+        addCondiments();
+    }
+
+    //let Coffee&Tea, IMPLEMENT it : without {}
+    abstract void addCondiments();
+
+    abstract void brew();
+
     protected void boilWater() {
         System.out.println("물을 끓인다");
     }
