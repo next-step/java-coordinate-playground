@@ -9,4 +9,9 @@ public class Coffee extends CaffeineBev {
     public void brew() {
         System.out.println("필터를 활용해 커피를 내린다");
     }
+
+    @Override
+    public boolean isCoffee() {
+        return true;
+    }
 }

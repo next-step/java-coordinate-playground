@@ -22,4 +22,6 @@ public abstract class CaffeineBev {
     protected void pourInCup() {
         System.out.println("컵에 붓는다");
     }
+
+    public abstract boolean isCoffee();
 }

@@ -9,4 +9,9 @@ public class Tea extends CaffeineBev {
     public void brew() {
         System.out.println("티백을 담근다");
     }
+
+    @Override
+    public boolean isCoffee() {
+        return false;
+    }
 }
