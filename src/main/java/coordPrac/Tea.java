@@ -1,6 +1,6 @@
 package coordPrac;
 
-public class Tea {
+public class Tea extends CaffeineBev {
     void prepareRecipe() {
         boilWater();
         steepTeaBag();
@@ -14,13 +14,5 @@ public class Tea {
 
     private void steepTeaBag() {
         System.out.println("티백을 담근다");
-    }
-
-    private void pourInCup() {
-        System.out.println("컵에 붓는다");
-    }
-
-    private void boilWater() {
-        System.out.println("물을 끓인다");
     }
 }
