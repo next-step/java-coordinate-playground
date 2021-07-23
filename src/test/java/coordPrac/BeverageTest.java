@@ -14,7 +14,21 @@ public class BeverageTest {
         CaffeineBev milkTea = new Tea();
         assertThat(cafeLatte.isCoffee()).isTrue();
         assertThat(milkTea.isCoffee()).isFalse();
+    }
 
+
+    @DisplayName("isNot")
+    @Test
+    void isBeverage() {
+        CaffeineBev beverage = new Tea();
+
+        //downCasting instanceOf
+        if (beverage instanceof Tea) {
+            Tea tea = (Tea)beverage;
+        }
+        if (beverage instanceof Coffee) {
+            Coffee coffee = (Coffee)beverage;
+        }
     }
 
 
