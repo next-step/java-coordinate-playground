@@ -14,8 +14,8 @@ public class BeCoordinateTest {
     void is_BeCoordinate(String xVal, String yVal) {
         BeCoordinate beCoordinate = new BeCoordinate(xVal, yVal);
         assertThat(beCoordinate).isInstanceOf(BeCoordinate.class);
-        assertThat(beCoordinate.getXVal()).isEqualTo(Integer.parseInt(xVal));
-        assertThat(beCoordinate.getYVal()).isEqualTo(Integer.parseInt(yVal));
+        assertThat(beCoordinate.getXValue()).isEqualTo(Integer.parseInt(xVal));
+        assertThat(beCoordinate.getYValue()).isEqualTo(Integer.parseInt(yVal));
     }
 
 }

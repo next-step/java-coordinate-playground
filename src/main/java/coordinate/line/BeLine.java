@@ -16,11 +16,11 @@ public class BeLine {
     }
 
     private int askXDistance() {
-        return first.getXVal() - second.getXVal();
+        return first.getXValue() - second.getXValue();
     }
 
     private int askYDistance() {
-        return first.getYVal() - second.getYVal();
+        return first.getYValue() - second.getYValue();
     }
     
 }

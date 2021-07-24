@@ -10,11 +10,12 @@ public class BeCoordinate {
         this.yVal = new BeY(yVal);
     }
 
-    public int getXVal() {
+    //parameter BeX, BeY, method use superclass BeDot
+    public int getXValue() {
         return xVal.getValue();
     }
 
-    public int getYVal() {
+    public int getYValue() {
         return yVal.getValue();
     }
 }
