@@ -13,8 +13,19 @@ public class OutputView {
     public static final void showInput(BeCoordinates soloOrLine) {
         System.out.println(String.format("%s", soloOrLine.makeStrings()));
     }
+
+    public static final void showBoard(BeCoordinates soloOrLine) {
+        if (soloOrLine instanceof BeDoubleCoord) {
+            showLineBoard((BeDoubleCoord) soloOrLine);
+            printXAxis();
+        }
+        if (soloOrLine instanceof BeSingleCoord) {
+            showSoloBoard((BeSingleCoord) soloOrLine);
+            printXAxis();
+        }
+    }
     
-    public static final void showLineBoard(BeDoubleCoord line) {
+    private static final void showLineBoard(BeDoubleCoord line) {
         if (line.isFirstBigYValue()) {
             printUpperAxis(line.getFirst());
             printPoint(line.getFirst());
@@ -29,14 +40,14 @@ public class OutputView {
         printLowerAxis(line.getFirst(),0);
     }
 
-    public static final void showSoloBoard(BeSingleCoord solo) {
+    private static final void showSoloBoard(BeSingleCoord solo) {
         printUpperAxis(solo.getSolo());
         printPoint(solo.getSolo());
         printLowerAxis(solo.getSolo(), 0);
     }
 
     public static final void showDistance(BeCoordinates soloOrLine) {
-        System.out.println("두 점 사이의 거리는 " + soloOrLine.askDistance());
+        System.out.println("\n두 점 사이의 거리는 " + soloOrLine.askDistance());
     }
 
 
@@ -46,12 +57,32 @@ public class OutputView {
         }
     }
 
+    private static final void printXAxis() {
+        System.out.println("  +" + printXLines());
+        isEvenPrintXAxis();
+    }
+
+    private static String printXLines() {
+        StringBuffer axis = new StringBuffer();
+        for (int i = 0 ; i < 24 ; i+= 2) {
+            axis.append("----");
+        }
+        return axis.toString();
+    }
 
     private static void isEvenPrintAxis(int i) {
         if (i % 2 == 0) {
             System.out.println(String.format("%2d|", i));
         } else {
             System.out.println("  |");
+        }
+    }
+
+    private static void isEvenPrintXAxis() {
+        for (int i = 0; i <= 24; i ++) {
+            if (i % 2 == 0) {
+                System.out.print(String.format(" %2d   ", i));
+            }
         }
     }
 
