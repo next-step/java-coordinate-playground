@@ -2,7 +2,7 @@ package coordinate.line;
 
 public class BeDotFactory {
 
-    public static String makeDot(String value) {
+    public static int makeDot(String value) {
         if (value == null || value.trim().isEmpty()) {
             throw new IllegalArgumentException("No Input");
         }
@@ -12,6 +12,6 @@ public class BeDotFactory {
         if (Integer.parseInt(value) < 0 || Integer.parseInt(value) > 24) {
             throw new IllegalArgumentException("Not in Dot Range");
         }
-        return value;
+        return Integer.parseInt(value);
     }
 }

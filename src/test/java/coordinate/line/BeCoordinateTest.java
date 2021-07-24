@@ -12,7 +12,10 @@ public class BeCoordinateTest {
     @ParameterizedTest
     @CsvSource(value={"0:0", "24:24", "8:24"}, delimiter=':')
     void is_BeCoordinate(String xVal, String yVal) {
-        assertThat(new BeCoordinate(xVal,yVal)).isInstanceOf(BeCoordinate.class);
+        BeCoordinate beCoordinate = new BeCoordinate(xVal, yVal);
+        assertThat(beCoordinate).isInstanceOf(BeCoordinate.class);
+        assertThat(beCoordinate.getXVal()).isEqualTo(Integer.parseInt(xVal));
+        assertThat(beCoordinate.getYVal()).isEqualTo(Integer.parseInt(yVal));
     }
 
 }

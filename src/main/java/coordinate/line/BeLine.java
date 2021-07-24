@@ -1,16 +1,26 @@
 package coordinate.line;
 
-import java.math.BigDecimal;
-import java.nio.file.Path;
-import java.util.function.DoublePredicate;
-import java.util.function.IntPredicate;
-import java.util.function.LongPredicate;
-import java.util.stream.DoubleStream;
-import java.util.stream.IntStream;
-import java.util.stream.LongStream;
+public class BeLine {
 
-public class BeLine extends BigDecimal implements IntPredicate, LongPredicate, DoublePredicate, CharSequence, DoubleStream, LongStream, IntStream, Path {
+    private final BeCoordinate first;
+    private final BeCoordinate second;
+
     public BeLine(BeCoordinate first, BeCoordinate second) {
-        super();
+        this.first = first;
+        this.second = second;
     }
+
+    public double askDistance() {
+        return Math.sqrt(askXDistance() * askXDistance()
+                        + askYDistance() * askYDistance());
+    }
+
+    private int askXDistance() {
+        return first.getXVal() - second.getXVal();
+    }
+
+    private int askYDistance() {
+        return first.getYVal() - second.getYVal();
+    }
+    
 }
