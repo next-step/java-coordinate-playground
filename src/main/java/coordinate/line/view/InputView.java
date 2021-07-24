@@ -12,7 +12,7 @@ public class InputView {
         System.out.print("좌표를 입력하세요.");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
-        String[] inputs = input.trim().split("");
+        String[] inputs = input.trim().split(",");
         if (inputs.length == 2) {
             return new BeSingleCoord(new BeCoordinate(inputs[0], inputs[1]));
         }

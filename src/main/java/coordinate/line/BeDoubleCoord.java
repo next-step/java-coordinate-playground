@@ -9,6 +9,15 @@ public class BeDoubleCoord extends BeCoordinates {
         this.first = first;
         this.second = second;
     }
+
+    public int getXValue(BeCoordinate beCoordinate) {
+        return beCoordinate.getXValue();
+    }
+
+    public int getYValue(BeCoordinate beCoordinate) {
+        return beCoordinate.getYValue();
+    }
+    
     
     @Override
     public double askDistance() {
@@ -28,4 +37,5 @@ public class BeDoubleCoord extends BeCoordinates {
     public String makeStrings() {
         return this.first.toString() + "-" + this.second.toString();
     }
+    
 }
