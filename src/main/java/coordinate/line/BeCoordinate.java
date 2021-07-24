@@ -9,6 +9,7 @@ public class BeCoordinate {
         this.xVal = new BeX(xVal);
         this.yVal = new BeY(yVal);
     }
+    
 
     //parameter BeX, BeY, method use superclass BeDot
     public int getXValue() {

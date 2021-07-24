@@ -8,7 +8,12 @@ public class CoordinateRunner {
 
         BeCoordinates beCoordinates = InputView.askInput();
         OutputView.showInput(beCoordinates);
-        OutputView.showBoard(beCoordinates);
+        if (beCoordinates instanceof BeDoubleCoord) {
+            OutputView.showLineBoard((BeDoubleCoord) beCoordinates);
+        }
+        if (beCoordinates instanceof BeSingleCoord) {
+            OutputView.showSoloBoard((BeSingleCoord) beCoordinates);
+        }
         OutputView.showDistance(beCoordinates);
 
     }

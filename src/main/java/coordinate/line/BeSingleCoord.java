@@ -8,12 +8,8 @@ public class BeSingleCoord extends BeCoordinates {
         this.solo = solo;
     }
 
-    public int getXValue() {
-        return solo.getXValue();
-    }
-
-    public int getYValue() {
-        return solo.getYValue();
+    public BeCoordinate getSolo() {
+        return solo;
     }
 
     @Override

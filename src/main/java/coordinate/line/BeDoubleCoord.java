@@ -10,14 +10,17 @@ public class BeDoubleCoord extends BeCoordinates {
         this.second = second;
     }
 
-    public int getXValue(BeCoordinate beCoordinate) {
-        return beCoordinate.getXValue();
+    public BeCoordinate getFirst() {
+        return first;
     }
 
-    public int getYValue(BeCoordinate beCoordinate) {
-        return beCoordinate.getYValue();
+    public BeCoordinate getSecond() {
+        return second;
     }
-    
+
+    public boolean isFirstBigYValue() {
+        return first.getYValue() >= second.getYValue();
+    }
     
     @Override
     public double askDistance() {
