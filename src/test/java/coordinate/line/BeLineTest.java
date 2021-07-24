@@ -23,5 +23,6 @@ public class BeLineTest {
         BeCoordinate second = new BeCoordinate("14", "15");
         BeLine beLine = new BeLine(first, second);
         assertThat(beLine.askDistance()).isEqualTo(6.403124, offset(0.00009));
+        assertThat(beLine.toString()).isEqualTo("(10,10)-(14,15)");
     }
 }

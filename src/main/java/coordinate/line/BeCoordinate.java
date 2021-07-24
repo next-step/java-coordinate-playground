@@ -18,4 +18,10 @@ public class BeCoordinate {
     public int getYValue() {
         return yVal.getValue();
     }
+
+    //toString can handle int
+    @Override
+    public String toString() {
+        return "(" + getXValue() + "," + getYValue() + ')';
+    }
 }

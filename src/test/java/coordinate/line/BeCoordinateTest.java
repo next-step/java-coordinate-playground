@@ -16,6 +16,7 @@ public class BeCoordinateTest {
         assertThat(beCoordinate).isInstanceOf(BeCoordinate.class);
         assertThat(beCoordinate.getXValue()).isEqualTo(Integer.parseInt(xVal));
         assertThat(beCoordinate.getYValue()).isEqualTo(Integer.parseInt(yVal));
+        assertThat(beCoordinate.toString()).isEqualTo("("+xVal+","+yVal+")");
     }
 
 }
