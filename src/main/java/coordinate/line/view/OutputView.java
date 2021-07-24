@@ -29,15 +29,16 @@ public class OutputView {
         if (line.isFirstBigYValue()) {
             printUpperAxis(line.getFirst());
             printPoint(line.getFirst());
-            printLowerAxis(line.getFirst(),line.getSecond().getYValue());
+            printLowerAxis(line.getFirst(), line.getSecond().getYValue());
             printPoint(line.getSecond());
-            printLowerAxis(line.getSecond(),0);
+            printLowerAxis(line.getSecond(), 0);
+        } else {
+            printUpperAxis(line.getSecond());
+            printPoint(line.getSecond());
+            printLowerAxis(line.getSecond(), line.getFirst().getYValue());
+            printPoint(line.getFirst());
+            printLowerAxis(line.getFirst(), 0);
         }
-        printUpperAxis(line.getSecond());
-        printPoint(line.getSecond());
-        printLowerAxis(line.getSecond(),line.getFirst().getYValue());
-        printPoint(line.getFirst());
-        printLowerAxis(line.getFirst(),0);
     }
 
     private static final void showSoloBoard(BeSingleCoord solo) {
@@ -65,7 +66,7 @@ public class OutputView {
     private static String printXLines() {
         StringBuffer axis = new StringBuffer();
         for (int i = 0 ; i < 24 ; i+= 2) {
-            axis.append("----");
+            axis.append("------");
         }
         return axis.toString();
     }
@@ -103,8 +104,8 @@ public class OutputView {
 
     private static final String printEmptySpace(BeCoordinate coord) {
         StringBuffer rightSpace = new StringBuffer();
-        for (int i = 1; i < coord.getXValue() ; i++) {
-            rightSpace.append("    ");
+        for (int i = 0; i < coord.getXValue() ; i++) {
+            rightSpace.append("   ");
         }
         return rightSpace.toString();
     }
