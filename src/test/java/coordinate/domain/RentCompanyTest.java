@@ -25,5 +25,8 @@ public class RentCompanyTest {
                         "Avante : 20리터" + NEWLINE +
                         "K5 : 30리터" + NEWLINE
         );
+        /*
+         item has NEWLINE, from Car superType, .collect(Collectors.joining());
+         */
     }
 }
