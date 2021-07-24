@@ -19,12 +19,6 @@ public class Avante extends Car {
     }
 
     @Override
-    public String toString() {
-        return getName() +
-                Double.toString(getDistancePerLiter()) + "리터";
-    }
-
-    @Override
     int getDistancePerLiter() {
         return 15;
     }

@@ -23,9 +23,4 @@ public class Sonata extends Car {
     int getDistancePerLiter() {
         return 10;
     }
-    @Override
-    public String toString() {
-        return getName() +
-                Double.toString(getDistancePerLiter()) + "리터";
-    }
 }

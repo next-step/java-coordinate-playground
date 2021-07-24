@@ -2,7 +2,6 @@ package coordinate.domain;
 
 public class K5 extends Car {
 
-
     private final int distance;
 
     K5(int distance) {
@@ -24,9 +23,5 @@ public class K5 extends Car {
         return 13;
     }
 
-    @Override
-    public String toString() {
-        return getName() +
-                Double.toString(getDistancePerLiter()) + "리터";
-    }
+
 }

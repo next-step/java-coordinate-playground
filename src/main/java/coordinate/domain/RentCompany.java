@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class RentCompany {
-    private static final String NEWLINE = System.getProperty("line.separator");
 
     private final List<Car> carList;
 
@@ -40,7 +39,9 @@ public class RentCompany {
     }
 
     public String generateReport() {
-        return carList.stream().map(o -> o.toString()).collect(Collectors.joining(NEWLINE));
+        return carList.stream()
+                .map(o -> o.toString())
+                .collect(Collectors.joining());
 
     }
 

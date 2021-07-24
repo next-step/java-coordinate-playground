@@ -1,6 +1,7 @@
 package coordinate.domain;
 
 abstract class Car {
+    private static final String NEWLINE = System.getProperty("line.separator");
 
     abstract String getName();
 
@@ -10,8 +11,14 @@ abstract class Car {
     abstract int getDistancePerLiter();
 
     // not abstract, 구현체
-    double putLiters() {
+    int putLiters() {
         return getDistance() / getDistancePerLiter();
+    }
+
+    @Override
+    public String toString() {
+        return getName() +
+                Integer.toString(putLiters()) + "리터" + NEWLINE;
     }
 }
 
