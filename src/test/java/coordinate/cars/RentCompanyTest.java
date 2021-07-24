@@ -1,4 +1,4 @@
-package coordinate.domain;
+package coordinate.cars;
 
 import org.junit.jupiter.api.Test;
 

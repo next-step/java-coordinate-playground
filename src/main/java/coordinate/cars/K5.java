@@ -1,16 +1,16 @@
-package coordinate.domain;
+package coordinate.cars;
 
-public class Avante extends Car {
+public class K5 extends Car {
 
     private final int distance;
 
-    Avante(int distance) {
+    K5(int distance) {
         this.distance = distance;
     }
 
     @Override
     String getName() {
-        return "Avante : ";
+        return "K5 : ";
     }
 
     @Override
@@ -20,7 +20,8 @@ public class Avante extends Car {
 
     @Override
     int getDistancePerLiter() {
-        return 15;
+        return 13;
     }
+
 
 }

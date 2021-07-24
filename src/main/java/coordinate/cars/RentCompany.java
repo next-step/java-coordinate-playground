@@ -1,4 +1,4 @@
-package coordinate.domain;
+package coordinate.cars;
 
 import java.util.ArrayList;
 import java.util.List;

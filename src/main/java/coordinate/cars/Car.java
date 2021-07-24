@@ -1,4 +1,4 @@
-package coordinate.domain;
+package coordinate.cars;
 
 abstract class Car {
     private static final String NEWLINE = System.getProperty("line.separator");
