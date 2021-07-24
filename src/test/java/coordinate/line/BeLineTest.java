@@ -25,4 +25,13 @@ public class BeLineTest {
         assertThat(beLine.askDistance()).isEqualTo(6.403124, offset(0.00009));
         assertThat(beLine.toString()).isEqualTo("(10,10)-(14,15)");
     }
+
+    @DisplayName("A Line Without Second")
+    @Test
+    void is_LineWithoutSecond() {
+        BeCoordinate first = new BeCoordinate("14", "15");
+        BeLine beLine = new BeLine(first);
+        assertThat(beLine.askDistance()).isEqualTo(0);
+        assertThat(beLine.toString()).isEqualTo("(14,15)");
+    }
 }
