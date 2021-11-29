@@ -9,7 +9,10 @@ public abstract class CaffeieneDrinks {
         System.out.println("컵에 음료를 담습니다.");
     }
     void makeDrink(){
-
+        boilWater();
+        brew();
+        pourInCup();
+        addIngredients();
     }
 
     abstract void brew();
