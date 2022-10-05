@@ -2,9 +2,7 @@ package domain;
 
 import util.RandomNumberGenerator;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Cars {
     public final List<Car> cars;
@@ -33,4 +31,13 @@ public class Cars {
             car.move(numberGenerator.generate());
         }
     }
+
+    public Map<String,Integer> getRacingResult(){
+        Map<String,Integer> racingRecord = new LinkedHashMap<>();
+        for(Car car : cars){
+            racingRecord.put(car.getCarName(),car.getPosition());
+        }
+        return racingRecord;
+    }
+
 }

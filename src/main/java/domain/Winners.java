@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Winners {
-    public static List<Car> findWinners(List<Car> cars) {
-        return findWinners(cars, maxPosition(cars));
+    public static List<String> findWinners(List<Car> cars) {
+               return toString(findWinners(cars, maxPosition(cars)));
     }
 
     private static List<Car> findWinners(List<Car> cars, int maxPosition) {
@@ -22,4 +22,13 @@ public class Winners {
         }
         return maxPosition;
     }
+
+    private static List<String> toString(List<Car> cars){
+        List<String> winners = new ArrayList<>();
+        for(Car car : cars){
+            winners.add(car.getCarName());
+        }
+        return winners;
+    }
+
 }
