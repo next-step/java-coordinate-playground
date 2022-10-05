@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class CarsTest {
     
@@ -47,5 +48,12 @@ public class CarsTest {
         for(Car car : result){
             assertThat(car.getPosition()).isEqualTo(0);
         }
+    }
+
+    @Test
+    void 자동차_이름_중복_테스트(){
+        assertThatThrownBy(()-> new Cars(Arrays.asList("CarA","CarA")))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("자동차이름은 중복될 수 없습니다.");
     }
 }

@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Objects;
+
 public class Car {
     private static final int STARTING_POSITION = 0;
     private static final int MOVE_LIMIT = 4;
@@ -46,5 +48,29 @@ public class Car {
 
     public String getCarName(){
         return this.name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return position == car.position && Objects.equals(name, car.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, position);
+    }
+
+    public boolean isMaxPosition(int maxPosition) {
+        return this.position == maxPosition;
+    }
+
+    public int maxPosition(int maxPosition) {
+        if(maxPosition<this.position){
+            return this.position;
+        }
+        return maxPosition;
     }
 }
