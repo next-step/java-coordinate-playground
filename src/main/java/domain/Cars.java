@@ -1,6 +1,10 @@
 package domain;
 
+import util.BoundedRandomNumberGenerator;
+import util.RandomNumberGenerator;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Cars {
@@ -14,6 +18,12 @@ public class Cars {
     }
 
     public List<Car> getCars() {
-        return cars;
+        return Collections.unmodifiableList(cars);
+    }
+
+    public void race(RandomNumberGenerator numberGenerator) {
+        for(Car car : cars){
+            car.move(numberGenerator.generate());
+        }
     }
 }

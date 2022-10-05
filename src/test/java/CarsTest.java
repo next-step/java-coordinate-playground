@@ -3,6 +3,7 @@ import domain.Cars;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import util.BoundedRandomNumberGenerator;
 
 import java.util.List;
 import java.util.Arrays;
@@ -27,7 +28,24 @@ public class CarsTest {
     @Test
     void 자동차_전진_테스트(){
         Cars cars = new Cars(Arrays.asList("CarA","CarB","CarC"));
+        cars.race(new BoundedRandomNumberGenerator(9, 4));
 
+        List<Car> result = cars.getCars();
 
+        for(Car car : result){
+            assertThat(car.getPosition()).isEqualTo(1);
+        }
+    }
+
+    @Test
+    void 자동차_멈춤_테스트(){
+        Cars cars = new Cars(Arrays.asList("CarA","CarB","CarC"));
+        cars.race(new BoundedRandomNumberGenerator(3, 0));
+
+        List<Car> result = cars.getCars();
+
+        for(Car car : result){
+            assertThat(car.getPosition()).isEqualTo(0);
+        }
     }
 }
