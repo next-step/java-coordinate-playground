@@ -23,11 +23,12 @@ classDiagram
     }
 
     CoordinateConsole ..> CoordinateCalculator
-    class Coordinates {
-        List coordinates
+    class CoordinateCalculator {
+        +$calculateLength(Coordinate coor1, Coordinate coor2)
     }
 
-    Coordinates ..> Coordinate
+    CoordinateOutput ..> Coordinate
+    CoordinateCalculator ..> Coordinate
     class Coordinate {
         -Position y;
         -Position x;
@@ -47,6 +48,6 @@ classDiagram
 
 ### 선 길이
 - [x] 점의 좌표는 0~24만 입력 가능하다
-- [ ] 두 점 사이의 거리를 구한다
+- [x] 두 점 사이의 거리를 구한다
 - [ ] 두 점의 위치를 확인할 수 있는 좌표평면을 String 형태로 만든다
 - [ ] 사용자의 입력을 받아 출력하는 좌표계산기를 완성한다 
