@@ -1,5 +1,5 @@
 package coordinate.domain;
 
 public enum CalculateType {
-    LINE, RECT
+    LINE, RECT, TRIANGLE
 }

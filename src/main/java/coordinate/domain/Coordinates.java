@@ -1,7 +1,6 @@
 package coordinate.domain;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class Coordinates {
@@ -23,21 +22,25 @@ public class Coordinates {
         if (coordinates.size() == 2) {
             return new CoordinateCalculateResult(CalculateType.LINE, calculateLength());
         }
+        if (coordinates.size() == 4) {
+            return new CoordinateCalculateResult(CalculateType.RECT, calculateRectArea());
+        }
 
-        return new CoordinateCalculateResult(CalculateType.RECT, calculateArea());
+        return new CoordinateCalculateResult(CalculateType.TRIANGLE, calculateTriangleArea());
+    }
+
+    private double calculateTriangleArea() {
+        Triangle triangle = new Triangle(coordinates);
+        return triangle.calculateArea();
     }
 
     private double calculateLength() {
-        Coordinate coor1 = coordinates.get(0);
-        Coordinate coor2 = coordinates.get(1);
+        Line line = new Line(coordinates);
+        return line.calculateLength();
 
-        return Math.sqrt(
-                Math.pow(coor1.getY() - coor2.getY(), 2.0)
-                        + Math.pow(coor1.getX() - coor2.getX(), 2.0)
-        );
     }
 
-    private int calculateArea() {
+    private int calculateRectArea() {
         Rect rect = new Rect(coordinates);
         return rect.calculateArea();
     }

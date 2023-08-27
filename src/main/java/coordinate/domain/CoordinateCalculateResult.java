@@ -14,7 +14,10 @@ public class CoordinateCalculateResult {
         if (calculateType == CalculateType.LINE) {
             return String.format("두 점 사이의 거리는 %f", result);
         }
-        return String.format("사각형 넓이는 %d", (int) result);
+        if (calculateType == CalculateType.TRIANGLE) {
+            return String.format("사각형 넓이는 %d", (int) result);
+        }
+        return String.format("삼각형 넓이는 %f", result);
     }
 
     public double getResult() {
