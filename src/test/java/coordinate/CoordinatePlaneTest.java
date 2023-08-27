@@ -1,5 +1,7 @@
 package coordinate;
 
+import coordinate.domain.Coordinate;
+import coordinate.domain.CoordinatePlane;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -43,7 +45,7 @@ public class CoordinatePlaneTest {
                 "  |\t \t★\t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \n" +
                 " 0|\t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \n" +
                 "  |-----------------------------------------------------------------------------------------------------\n" +
-                "   \t0\t\t2\t\t4\t\t6\t\t8\t\t10\t\t12\t\t14\t\t16\t\t18\t\t20\t\t22\t\t24";
+                "  0\t\t2\t\t4\t\t6\t\t8\t\t10\t\t12\t\t14\t\t16\t\t18\t\t20\t\t22\t\t24";
 
         assertEquals(expected, actual);
     }

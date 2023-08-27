@@ -6,7 +6,6 @@ classDiagram
     class CoordinateConsole {
         -CoordinateInput in;
         -CoordinateOutput out;
-        -CoordinatePlane coordinatePlane;
 
         +start()
     }
@@ -23,18 +22,22 @@ classDiagram
         +printLineLength(int lineLength)
     }
 
-    CoordinateConsole ..> CoordinateCalculator
-    class CoordinateCalculator {
-        +$calculateLength(Coordinate coor1, Coordinate coor2)
+    CoordinateConsole ..> Coordinates
+    class Coordinates {
+        -List coordinates
+
+        +Coordinates(String coordinatesStr)
+        +calculateLength(): double
     }
 
     CoordinateOutput ..> Coordinate
-    CoordinateCalculator ..> Coordinate
+    Coordinates ..> Coordinate
     class Coordinate {
         -Position y;
         -Position x;
 
         +Coordinate(int y, int x)
+        +Coordinate(String coordinateStr)
     }
 
     Coordinate ..> Position
@@ -60,4 +63,4 @@ classDiagram
 - [x] 점의 좌표는 0~24만 입력 가능하다
 - [x] 두 점 사이의 거리를 구한다
 - [x] 두 점의 위치를 확인할 수 있는 좌표평면을 String 형태로 만든다
-- [ ] 사용자의 입력을 받아 출력하는 좌표계산기를 완성한다 
+- [x] 사용자의 입력을 받아 출력하는 좌표계산기를 완성한다 

@@ -1,11 +1,15 @@
-package coordinate;
+package coordinate.domain;
 
 import java.util.List;
 
 public class CoordinatePlane {
-    private final List<Coordinate> coordinates;
+    private final Coordinates coordinates;
 
     public CoordinatePlane(List<Coordinate> coordinates) {
+        this.coordinates = new Coordinates(coordinates);
+    }
+
+    public CoordinatePlane(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
 
@@ -36,7 +40,7 @@ public class CoordinatePlane {
     }
 
     private String getSymbolForCoordinate(int x, int y) {
-        if (hasCoordinateAt(x, y)) {
+        if (coordinates.hasCoordinateAt(x, y)) {
             return "\t★";
         }
         return "\t ";
@@ -49,17 +53,12 @@ public class CoordinatePlane {
         return "  |";
     }
 
-    private boolean hasCoordinateAt(int y, int x) {
-        return coordinates.stream()
-                .anyMatch(coordinate -> coordinate.getY() == y && coordinate.getX() == x);
-    }
-
     private String generateLastRow() {
         StringBuilder lastRow = new StringBuilder();
         lastRow.append("  |-----------------------------------------------------------------------------------------------------\n");
-        lastRow.append("   ");
+        lastRow.append("  0");
 
-        for (int x = 0; x <= 24; x++) {
+        for (int x = 1; x <= 24; x++) {
             lastRow.append(getTabWithNumber(x));
         }
 

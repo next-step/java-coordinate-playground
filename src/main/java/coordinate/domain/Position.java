@@ -1,4 +1,4 @@
-package coordinate;
+package coordinate.domain;
 
 public class Position {
     private final int position;
