@@ -6,11 +6,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CoordinateTest {
     @Test
-    void 점의_좌표는_0_에서_24_만_입력_가능하다() {
-        assertDoesNotThrow(() -> new Coordinate(0, 0));
+    void 점의_좌표는_1_에서_24_만_입력_가능하다() {
+        assertDoesNotThrow(() -> new Coordinate(1, 1));
         assertDoesNotThrow(() -> new Coordinate(24, 24));
         assertThrows(IllegalArgumentException.class,
-                () -> new Coordinate(-1, -1));
+                () -> new Coordinate(0, 0));
         assertThrows(IllegalArgumentException.class,
                 () -> new Coordinate(25, 25));
     }

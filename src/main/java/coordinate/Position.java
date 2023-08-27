@@ -4,7 +4,7 @@ public class Position {
     private final int position;
 
     public Position(int position) {
-        if (position < 0 || position > 24) {
+        if (position < 1 || position > 24) {
             throw new IllegalArgumentException();
         }
 
