@@ -1,6 +1,7 @@
 package coordinate;
 
 import coordinate.domain.Coordinate;
+import coordinate.domain.CoordinateCalculateResult;
 import coordinate.domain.Coordinates;
 import org.junit.jupiter.api.Test;
 
@@ -14,8 +15,8 @@ public class CoordinatesTest {
         Coordinate coor1 = new Coordinate(1, 1);
         Coordinate coor2 = new Coordinate(6, 6);
         Coordinates coordinates = new Coordinates(List.of(coor1, coor2));
-        double result = coordinates.calculateLength();
+        CoordinateCalculateResult result = coordinates.calculate();
 
-        assertEquals(7.071, result, 0.001);
+        assertEquals(7.071, result.getResult(), 0.001);
     }
 }

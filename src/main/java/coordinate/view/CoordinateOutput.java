@@ -1,5 +1,6 @@
 package coordinate.view;
 
+import coordinate.domain.CoordinateCalculateResult;
 import coordinate.domain.CoordinatePlane;
 
 public class CoordinateOutput {
@@ -11,7 +12,8 @@ public class CoordinateOutput {
         System.out.println(coordinatePlane.toString());
     }
 
-    public void printLineLength(double lineLength) {
-        System.out.printf("두 점 사이 거리는 %f%n", lineLength);
+
+    public void printResult(CoordinateCalculateResult result) {
+        System.out.println(result.toString());
     }
 }

@@ -1,5 +1,6 @@
 package coordinate.view;
 
+import coordinate.domain.CoordinateCalculateResult;
 import coordinate.domain.CoordinatePlane;
 import coordinate.domain.Coordinates;
 
@@ -20,7 +21,7 @@ public class CoordinateConsole {
         CoordinatePlane coordinatePlane = new CoordinatePlane(coordinates);
         out.printCoordinatePlane(coordinatePlane);
 
-        double lineLength = coordinates.calculateLength();
-        out.printLineLength(lineLength);
+        CoordinateCalculateResult result = coordinates.calculate();
+        out.printResult(result);
     }
 }
